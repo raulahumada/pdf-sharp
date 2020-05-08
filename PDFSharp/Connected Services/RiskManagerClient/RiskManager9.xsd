@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/InMotionGIT.General.Entity.Contracts.Address.Enumerations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/InMotionGIT.General.Entity.Contracts.Address.Enumerations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="EnumTypeOfAddress">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Business" />
+      <xs:enumeration value="Home" />
+      <xs:enumeration value="POBox" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumTypeOfAddress" nillable="true" type="tns:EnumTypeOfAddress" />
+</xs:schema>

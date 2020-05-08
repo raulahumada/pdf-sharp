@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts.Enumerations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts.Enumerations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="EnumTypeOfUnit">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NoUnit" />
+      <xs:enumeration value="YearUnit" />
+      <xs:enumeration value="MonthUnit" />
+      <xs:enumeration value="WeekUnit" />
+      <xs:enumeration value="DaysUnit" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumTypeOfUnit" nillable="true" type="tns:EnumTypeOfUnit" />
+  <xs:simpleType name="EnumCommissionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="AccordingToTable" />
+      <xs:enumeration value="CommissionSets" />
+      <xs:enumeration value="NoCommission" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumCommissionType" nillable="true" type="tns:EnumCommissionType" />
+  <xs:simpleType name="EnumInsuredStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="InForce" />
+      <xs:enumeration value="Excluded" />
+      <xs:enumeration value="PendingSubscription" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumInsuredStatus" nillable="true" type="tns:EnumInsuredStatus" />
+  <xs:simpleType name="EnumTransaction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="PolicySetup" />
+      <xs:enumeration value="CertificateSetup" />
+      <xs:enumeration value="PolicyCertificateSetupRetrieval" />
+      <xs:enumeration value="PolicyQuotation" />
+      <xs:enumeration value="CertificateQuotation" />
+      <xs:enumeration value="PolicyApplication" />
+      <xs:enumeration value="CertificateApplication" />
+      <xs:enumeration value="QueryOfPolicy" />
+      <xs:enumeration value="QueryOfCertificate" />
+      <xs:enumeration value="QueryOfQuotation" />
+      <xs:enumeration value="QueryOfAnApplication" />
+      <xs:enumeration value="PolicyModificationStandard" />
+      <xs:enumeration value="PolicyModificationTemporary" />
+      <xs:enumeration value="CertificateModificationStandard" />
+      <xs:enumeration value="CertificateModificationTemporary" />
+      <xs:enumeration value="ConvertFromQuoteToPolicy" />
+      <xs:enumeration value="ConvertFromApplicationToPolicy" />
+      <xs:enumeration value="ReissueOfPolicy" />
+      <xs:enumeration value="ReissueOfCertificate" />
+      <xs:enumeration value="Reprint" />
+      <xs:enumeration value="Declarations" />
+      <xs:enumeration value="CoverageNote" />
+      <xs:enumeration value="ConvertirCotizaciónAPropuesta" />
+      <xs:enumeration value="QuoteOfPolicyModification" />
+      <xs:enumeration value="QuoteOfCertificateModification" />
+      <xs:enumeration value="RequestOfPolicyModification" />
+      <xs:enumeration value="RequestOfCertificateModification" />
+      <xs:enumeration value="QuoteOfPolicyRenewal" />
+      <xs:enumeration value="QuoteOfCertificateRenewal" />
+      <xs:enumeration value="ProposalOfPolicyRenewal" />
+      <xs:enumeration value="ProposalOfCertificateRenewal" />
+      <xs:enumeration value="Inspections" />
+      <xs:enumeration value="ConvertQuoteOfPolicyModificationToNormalModification" />
+      <xs:enumeration value="ModificationRequestApproval" />
+      <xs:enumeration value="ConvertQuoteOfPolicyRenewalToPolicy" />
+      <xs:enumeration value="ConvertProposalOfPolicyRenewalToPolicy" />
+      <xs:enumeration value="ConvertQuoteOfModificationToProposalOfModification" />
+      <xs:enumeration value="ConvertQuoteOfRenewalToProposalOfRenewal" />
+      <xs:enumeration value="QueryOfQuoteOfModification" />
+      <xs:enumeration value="QueryOfRequestOfModification" />
+      <xs:enumeration value="QueryOfQuoteOfRenewal" />
+      <xs:enumeration value="QueryOfProposalOfRenewal" />
+      <xs:enumeration value="ModificationOrEvaluationOfProposalOfReinstatement" />
+      <xs:enumeration value="QueryOfProposalOfRehabilitation" />
+      <xs:enumeration value="CopyAndPastePolicy" />
+      <xs:enumeration value="TransferOfInsuredPerson" />
+      <xs:enumeration value="AutomaticUpdatingOfIncreasingDecreasingCapitals" />
+      <xs:enumeration value="Surrender">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumTransaction" nillable="true" type="tns:EnumTransaction" />
+</xs:schema>

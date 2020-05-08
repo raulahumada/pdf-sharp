@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/InMotionGIT.Product.Entity.Contracts.Enumerations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Product.Entity.Contracts.Enumerations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="EnumPaymentFrequency">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Annual" />
+      <xs:enumeration value="Semiannual" />
+      <xs:enumeration value="Quarterly" />
+      <xs:enumeration value="Bimonthly" />
+      <xs:enumeration value="Monthly" />
+      <xs:enumeration value="SinglePremium" />
+      <xs:enumeration value="Daily" />
+      <xs:enumeration value="Quotas" />
+      <xs:enumeration value="ToBeDetermined">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10000</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumPaymentFrequency" nillable="true" type="tns:EnumPaymentFrequency" />
+  <xs:simpleType name="EnumTypeOfInsurancePeriod">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="ReachedAge" />
+      <xs:enumeration value="Years" />
+      <xs:enumeration value="AccordingToPolicy" />
+      <xs:enumeration value="AccordingToRoutine" />
+      <xs:enumeration value="Open" />
+      <xs:enumeration value="Free" />
+      <xs:enumeration value="Mixed" />
+      <xs:enumeration value="Months" />
+      <xs:enumeration value="Days" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumTypeOfInsurancePeriod" nillable="true" type="tns:EnumTypeOfInsurancePeriod" />
+  <xs:simpleType name="EnumTypeOfPremiumRecalculation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="DoNotApply" />
+      <xs:enumeration value="AnniversaryCoverage" />
+      <xs:enumeration value="RenewalOfThePolicy" />
+      <xs:enumeration value="AmendmentOfThePolicy" />
+      <xs:enumeration value="RenewalAmendmentOfThePolicy" />
+      <xs:enumeration value="AnniversaryAmendmentOfThePolicy" />
+      <xs:enumeration value="AnniversaryRenewalOfThePolicy" />
+      <xs:enumeration value="Always" />
+      <xs:enumeration value="Recalcular" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumTypeOfPremiumRecalculation" nillable="true" type="tns:EnumTypeOfPremiumRecalculation" />
+  <xs:simpleType name="EnumCriteriaToDetermineDuplicationInUpload">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="ByClientId" />
+      <xs:enumeration value="ByCreditNumber" />
+      <xs:enumeration value="ByPatentNumber" />
+      <xs:enumeration value="ByRiskLocation" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumCriteriaToDetermineDuplicationInUpload" nillable="true" type="tns:EnumCriteriaToDetermineDuplicationInUpload" />
+  <xs:simpleType name="EnumCoverageChange">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Unchanged" />
+      <xs:enumeration value="PremiumChange" />
+      <xs:enumeration value="RateChange" />
+      <xs:enumeration value="InsuredAmountChange" />
+      <xs:enumeration value="RateAndInsuredAmountChange" />
+      <xs:enumeration value="InsuredAmountAndPremiumChange" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumCoverageChange" nillable="true" type="tns:EnumCoverageChange" />
+  <xs:simpleType name="EnumTypeMinimumAge">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Years">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Days">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumTypeMinimumAge" nillable="true" type="tns:EnumTypeMinimumAge" />
+  <xs:simpleType name="EnumCoveragePermittedUse">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Basic" />
+      <xs:enumeration value="Extensive" />
+      <xs:enumeration value="Complementary" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumCoveragePermittedUse" nillable="true" type="tns:EnumCoveragePermittedUse" />
+  <xs:simpleType name="EnumOptionInGroups">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="NotHas" />
+      <xs:enumeration value="PerPolicy" />
+      <xs:enumeration value="PerGroup" />
+      <xs:enumeration value="PerCertificate" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumOptionInGroups" nillable="true" type="tns:EnumOptionInGroups" />
+  <xs:simpleType name="EnumRiskType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Standard" />
+      <xs:enumeration value="SubStandard" />
+      <xs:enumeration value="StandardNonSmoker" />
+      <xs:enumeration value="StandardSmoking" />
+      <xs:enumeration value="Preferential" />
+      <xs:enumeration value="SuperPreferred" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumRiskType" nillable="true" type="tns:EnumRiskType" />
+  <xs:simpleType name="EnumPolicyType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Individual" />
+      <xs:enumeration value="Group" />
+      <xs:enumeration value="MultipleLocation" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumPolicyType" nillable="true" type="tns:EnumPolicyType" />
+  <xs:simpleType name="EnumRateType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Percentage" />
+      <xs:enumeration value="PerThousand" />
+      <xs:enumeration value="FixedAmount" />
+      <xs:enumeration value="NotApply" />
+      <xs:enumeration value="TypeFive" />
+      <xs:enumeration value="TypeTenThousand">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10000</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumRateType" nillable="true" type="tns:EnumRateType" />
+  <xs:simpleType name="EnumTypeOfLineOfBusiness">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Life" />
+      <xs:enumeration value="SOAT" />
+      <xs:enumeration value="Automobile" />
+      <xs:enumeration value="PropertyAndCasualty" />
+      <xs:enumeration value="Comprehensive" />
+      <xs:enumeration value="Previsional" />
+      <xs:enumeration value="MedicalCare" />
+      <xs:enumeration value="Transport" />
+      <xs:enumeration value="Hogar" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumTypeOfLineOfBusiness" nillable="true" type="tns:EnumTypeOfLineOfBusiness" />
+  <xs:simpleType name="EnumSpecialCalculations">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="BuldLoad" />
+      <xs:enumeration value="RenovationCleanTCoverCoverageNotExisting" />
+      <xs:enumeration value="Renovation" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumSpecialCalculations" nillable="true" type="tns:EnumSpecialCalculations" />
+</xs:schema>

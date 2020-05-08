@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Rating" elementFormDefault="qualified" targetNamespace="Rating" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" />
+  <xs:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd5" namespace="urn:InMotionGIT.Common.Contracts" />
+  <xs:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd21" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Bill.Entity.Contracts" />
+  <xs:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Common.Contracts.Enumerations" />
+  <xs:complexType name="CoverageRating">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnualPremium" type="xs:decimal" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="Coverages" nillable="true" type="q1:ArrayOfCoverage" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="CoveragesWithCalculatedPremium" nillable="true" type="q2:ArrayOfCoverageWithCalculatedPremium" />
+      <xs:element xmlns:q3="urn:InMotionGIT.Common.Contracts" minOccurs="0" name="Errors" nillable="true" type="q3:ArrayOfError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CoverageRating" nillable="true" type="tns:CoverageRating" />
+  <xs:complexType name="Billing">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/InMotionGIT.Bill.Entity.Contracts" minOccurs="0" name="Bills" nillable="true" type="q4:ArrayOfPremium" />
+      <xs:element xmlns:q5="urn:InMotionGIT.Common.Contracts" minOccurs="0" name="Errors" nillable="true" type="q5:ArrayOfError" />
+      <xs:element minOccurs="0" name="Quotes" nillable="true" type="tns:ArrayOfBillQuote" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Billing" nillable="true" type="tns:Billing" />
+  <xs:complexType name="ArrayOfBillQuote">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BillQuote" nillable="true" type="tns:BillQuote" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBillQuote" nillable="true" type="tns:ArrayOfBillQuote" />
+  <xs:complexType name="BillQuote">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Coverage1" type="xs:int" />
+      <xs:element minOccurs="0" name="Coverage1Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Coverage1InsuredAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Coverage1Premium" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Coverage2" type="xs:int" />
+      <xs:element minOccurs="0" name="Coverage2Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Coverage2InsuredAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Coverage2Premium" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Coverage3" type="xs:int" />
+      <xs:element minOccurs="0" name="Coverage3Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Coverage3InsuredAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Coverage3Premium" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Coverage4" type="xs:int" />
+      <xs:element minOccurs="0" name="Coverage4Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Coverage4InsuredAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Coverage4Premium" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Coverage5" type="xs:int" />
+      <xs:element minOccurs="0" name="Coverage5Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Coverage5InsuredAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Coverage5Premium" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Descript" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gastos" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IVA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="PrimaNeta" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PrimaTotal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SelectedByDefault" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SubTotal" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BillQuote" nillable="true" type="tns:BillQuote" />
+  <xs:complexType name="PolicyLoaded">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnualPremium" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BillNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="CertificateID" type="xs:long" />
+      <xs:element xmlns:q6="urn:InMotionGIT.Common.Contracts" minOccurs="0" name="Errors" nillable="true" type="q6:ArrayOfError" />
+      <xs:element minOccurs="0" name="InsuredAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:long" />
+      <xs:element minOccurs="0" name="StatusOfPolicyCertificate" type="xs:int" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/InMotionGIT.Common.Contracts.Enumerations" minOccurs="0" name="StatusOfPolicyCertificateEnum" type="q7:EnumStatusOfPolicyCertificate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicyLoaded" nillable="true" type="tns:PolicyLoaded" />
+</xs:schema>

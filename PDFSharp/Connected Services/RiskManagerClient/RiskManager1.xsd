@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd2" namespace="urn:InMotionGIT.Common.DataType" />
+  <xs:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" />
+  <xs:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd5" namespace="urn:InMotionGIT.Common.Contracts" />
+  <xs:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Common.Contracts.Enumerations" />
+  <xs:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd22" namespace="Rating" />
+  <xs:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd23" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.PolicyManager.Services.Enumerations" />
+  <xs:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts.Enumerations" />
+  <xs:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Client.Entity.Contracts" />
+  <xs:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd24" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Product.Entity.Contracts" />
+  <xs:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Product.Entity.Contracts.Enumerations" />
+  <xs:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd25" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts.Base" />
+  <xs:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd26" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Claim.Entity.Contracts" />
+  <xs:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd28" namespace="urn:InMotionGIT.Policy.Entity.Contracts.Models.Result" />
+  <xs:element name="VehicleBrandsLkp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VehicleBrandsLkpResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="urn:InMotionGIT.Common.DataType" minOccurs="0" name="VehicleBrandsLkpResult" nillable="true" type="q1:ArrayOfLookUpValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VehicleModelsLkp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="brand" type="xs:int" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VehicleModelsLkpResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="urn:InMotionGIT.Common.DataType" minOccurs="0" name="VehicleModelsLkpResult" nillable="true" type="q2:ArrayOfLookUpValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveVehicleInformationByCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vehicleCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveVehicleInformationByCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="RetrieveVehicleInformationByCodeResult" nillable="true" type="q3:VehiclesInAuto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveVehicleInformationByBrandAndModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="brand" type="xs:int" />
+        <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveVehicleInformationByBrandAndModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="RetrieveVehicleInformationByBrandAndModelResult" nillable="true" type="q4:VehiclesInAuto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Find">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="recordType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lineOfBusiness" type="xs:int" />
+        <xs:element minOccurs="0" name="productCode" type="xs:int" />
+        <xs:element minOccurs="0" name="policyID" type="xs:long" />
+        <xs:element minOccurs="0" name="certificateID" type="xs:long" />
+        <xs:element minOccurs="0" name="atDate" type="xs:dateTime" />
+        <xs:element xmlns:q5="urn:InMotionGIT.Common.Contracts" minOccurs="0" name="consumer" nillable="true" type="q5:ConsumerInformation" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FindResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Retrieve">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="recordType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lineOfBusiness" type="xs:int" />
+        <xs:element minOccurs="0" name="productCode" type="xs:int" />
+        <xs:element minOccurs="0" name="policyID" type="xs:long" />
+        <xs:element minOccurs="0" name="certificateID" type="xs:long" />
+        <xs:element minOccurs="0" name="atDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="includeClientInformation" type="xs:boolean" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="RetrieveResult" nillable="true" type="q6:RiskInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveByBill">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="recordType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lineOfBusiness" type="xs:int" />
+        <xs:element minOccurs="0" name="productCode" type="xs:int" />
+        <xs:element minOccurs="0" name="policyID" type="xs:long" />
+        <xs:element minOccurs="0" name="certificateID" type="xs:long" />
+        <xs:element minOccurs="0" name="atDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="includeClientInformation" type="xs:boolean" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element xmlns:q7="urn:InMotionGIT.Common.Contracts" minOccurs="0" name="consumer" nillable="true" type="q7:ConsumerInformation" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveByBillResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="RetrieveByBillResult" nillable="true" type="q8:RiskInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GeneratePolicyIdentify">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/InMotionGIT.Common.Contracts.Enumerations" minOccurs="0" name="recordType" type="q9:EnumTypeOfRecord" />
+        <xs:element minOccurs="0" name="lineOfBusiness" type="xs:int" />
+        <xs:element minOccurs="0" name="productCode" type="xs:int" />
+        <xs:element xmlns:q10="urn:InMotionGIT.Common.Contracts" minOccurs="0" name="consumer" nillable="true" type="q10:ConsumerInformation" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GeneratePolicyIdentifyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GeneratePolicyIdentifyResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveAutomobileInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="licensePlateType" type="xs:int" />
+        <xs:element minOccurs="0" name="licensePlate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="engineSerialNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="chassis" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="atDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveAutomobileInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="RetrieveAutomobileInformationResult" nillable="true" type="q11:AutomobileInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LicensePlateCheckDigitCalculate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="licensePlate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LicensePlateCheckDigitCalculateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LicensePlateCheckDigitCalculateResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CoverageRating">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="risk" nillable="true" type="q12:RiskInformation" />
+        <xs:element minOccurs="0" name="detail" type="xs:boolean" />
+        <xs:element minOccurs="0" name="atDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CoverageRatingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="Rating" minOccurs="0" name="CoverageRatingResult" nillable="true" type="q13:CoverageRating" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Billing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="risk" nillable="true" type="q14:RiskInformation" />
+        <xs:element minOccurs="0" name="calculateByModule" type="xs:boolean" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/InMotionGIT.PolicyManager.Services.Enumerations" minOccurs="0" name="detailLevel" type="q15:EnumBillingDetail" />
+        <xs:element minOccurs="0" name="atDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BillingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="Rating" minOccurs="0" name="BillingResult" nillable="true" type="q16:Billing" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PolicyLoad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="risk" nillable="true" type="q17:RiskInformation" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts.Enumerations" minOccurs="0" name="transaction" type="q18:EnumTransaction" />
+        <xs:element minOccurs="0" name="generatePolicyId" type="xs:boolean" />
+        <xs:element minOccurs="0" name="atDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="loadClient" type="xs:boolean" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PolicyLoadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="Rating" minOccurs="0" name="PolicyLoadResult" nillable="true" type="q19:PolicyLoaded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClientInformationRequired">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lineOfBusiness" type="xs:int" />
+        <xs:element minOccurs="0" name="productCode" type="xs:int" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/InMotionGIT.Client.Entity.Contracts" minOccurs="0" name="insured" nillable="true" type="q20:Client" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/InMotionGIT.Common.Contracts.Enumerations" minOccurs="0" name="role" type="q21:EnumRole" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts.Enumerations" minOccurs="0" name="transaction" type="q22:EnumTransaction" />
+        <xs:element minOccurs="0" name="atDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClientInformationRequiredResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="urn:InMotionGIT.Common.Contracts" minOccurs="0" name="ClientInformationRequiredResult" nillable="true" type="q23:ErrorCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CoverageRatingLife">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="riskInformationInstance" nillable="true" type="q24:RiskInformation" />
+        <xs:element minOccurs="0" name="atDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CoverageRatingLifeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="CoverageRatingLifeResult" nillable="true" type="q25:RiskInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveForAmendment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="recordType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lineOfBusiness" type="xs:int" />
+        <xs:element minOccurs="0" name="productCode" type="xs:int" />
+        <xs:element minOccurs="0" name="policyID" type="xs:long" />
+        <xs:element minOccurs="0" name="certificateID" type="xs:long" />
+        <xs:element minOccurs="0" name="atDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="includeClientInformation" type="xs:boolean" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveForAmendmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="RetrieveForAmendmentResult" nillable="true" type="q26:RiskInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AmendmentSetup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="risk" nillable="true" type="q27:RiskInformation" />
+        <xs:element minOccurs="0" name="atDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AmendmentSetupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="AmendmentSetupResult" nillable="true" type="q28:RiskInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AmendmentApply">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="risk" nillable="true" type="q29:RiskInformation" />
+        <xs:element minOccurs="0" name="atDate" type="xs:dateTime" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/InMotionGIT.Product.Entity.Contracts" minOccurs="0" name="product" nillable="true" type="q30:ProductMaster" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AmendmentApplyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="AmendmentApplyResult" nillable="true" type="q31:RiskInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateCapital">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="RiskInformation" nillable="true" type="q32:RiskInformation" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/InMotionGIT.Product.Entity.Contracts" minOccurs="0" name="product" nillable="true" type="q33:ProductMaster" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="tCover" nillable="true" type="q34:CoverageWithCalculatedPremium" />
+        <xs:element minOccurs="0" name="atDate" type="xs:dateTime" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts.Enumerations" minOccurs="0" name="transaction" type="q35:EnumTransaction" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/InMotionGIT.Product.Entity.Contracts.Enumerations" minOccurs="0" name="specialCalculations" type="q36:EnumSpecialCalculations" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateCapitalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculateCapitalResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePremium">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="RiskInformation" nillable="true" type="q37:RiskInformation" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/InMotionGIT.Product.Entity.Contracts" minOccurs="0" name="product" nillable="true" type="q38:ProductMaster" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="tCover" nillable="true" type="q39:CoverageWithCalculatedPremium" />
+        <xs:element minOccurs="0" name="atDate" type="xs:dateTime" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts.Enumerations" minOccurs="0" name="transaction" type="q40:EnumTransaction" />
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/InMotionGIT.Product.Entity.Contracts.Enumerations" minOccurs="0" name="specialCalculations" type="q41:EnumSpecialCalculations" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePremiumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts.Base" minOccurs="0" name="CalculatePremiumResult" type="q42:DataType.PremiumInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPolicyBalance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/InMotionGIT.Claim.Entity.Contracts" minOccurs="0" name="claim" nillable="true" type="q43:Claim" />
+        <xs:element minOccurs="0" name="languageId" type="xs:int" />
+        <xs:element minOccurs="0" name="atDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPolicyBalanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPolicyBalanceResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BillCalculation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="RiskInformation" nillable="true" type="q44:RiskInformation" />
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/InMotionGIT.Product.Entity.Contracts" minOccurs="0" name="product" nillable="true" type="q45:ProductMaster" />
+        <xs:element minOccurs="0" name="recordEffectiveDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="transaction" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BillCalculationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="urn:InMotionGIT.Policy.Entity.Contracts.Models.Result" minOccurs="0" name="BillCalculationResult" nillable="true" type="q46:Receipt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PolicyLoader">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="risk" nillable="true" type="q47:RiskInformation" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts.Enumerations" minOccurs="0" name="transaction" type="q48:EnumTransaction" />
+        <xs:element minOccurs="0" name="generatePolicyId" type="xs:boolean" />
+        <xs:element minOccurs="0" name="auditUser" type="xs:int" />
+        <xs:element minOccurs="0" name="atDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="loadClient" type="xs:boolean" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PolicyLoaderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="PolicyLoaderResult" nillable="true" type="q49:RiskInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PolicySetup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="riskInformationInstance" nillable="true" type="q50:RiskInformation" />
+        <xs:element minOccurs="0" name="generateBillInformation" type="xs:boolean" />
+        <xs:element minOccurs="0" name="generatePolicyId" type="xs:boolean" />
+        <xs:element minOccurs="0" name="auditUserIdentify" type="xs:int" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts.Enumerations" minOccurs="0" name="transaction" type="q51:EnumTransaction" />
+        <xs:element minOccurs="0" name="atDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PolicySetupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="PolicySetupResult" nillable="true" type="q52:RiskInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RatingSpecialCalculateProcess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="RiskInformation" nillable="true" type="q53:RiskInformation" />
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/InMotionGIT.Product.Entity.Contracts" minOccurs="0" name="product" nillable="true" type="q54:ProductMaster" />
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts.Enumerations" minOccurs="0" name="transaction" type="q55:EnumTransaction" />
+        <xs:element minOccurs="0" name="auditUserIdentify" type="xs:int" />
+        <xs:element minOccurs="0" name="atDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="processType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nGroup" type="xs:int" />
+        <xs:element minOccurs="0" name="insuranceAmountForBulkLoad" type="xs:decimal" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/InMotionGIT.Product.Entity.Contracts.Enumerations" minOccurs="0" name="specialCalculations" type="q56:EnumSpecialCalculations" />
+        <xs:element minOccurs="0" name="sKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ClientRole" type="xs:int" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RatingSpecialCalculateProcessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="urn:InMotionGIT.Common.Contracts" minOccurs="0" name="RatingSpecialCalculateProcessResult" nillable="true" type="q57:ErrorCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RatingCalculateProcess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="riskInformation" nillable="true" type="q58:RiskInformation" />
+        <xs:element xmlns:q59="urn:InMotionGIT.Common.Contracts" minOccurs="0" name="errors" nillable="true" type="q59:ErrorCollection" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts.Enumerations" minOccurs="0" name="transaction" type="q60:EnumTransaction" />
+        <xs:element minOccurs="0" name="atDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RatingCalculateProcessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="RatingCalculateProcessResult" nillable="true" type="q61:RiskInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessCalReceiptMod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RecordType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LineOfBusiness" type="xs:int" />
+        <xs:element minOccurs="0" name="ProductCode" type="xs:int" />
+        <xs:element minOccurs="0" name="PolicyID" type="xs:double" />
+        <xs:element minOccurs="0" name="certificateID" type="xs:double" />
+        <xs:element minOccurs="0" name="recordEffectiveDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="auditUserIdentify" type="xs:int" />
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts.Enumerations" minOccurs="0" name="transaction" type="q62:EnumTransaction" />
+        <xs:element minOccurs="0" name="invoice" type="xs:int" />
+        <xs:element minOccurs="0" name="dLedgerDat" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="TypeExec" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="issueReceipt" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sOptReceipt" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sOptDev" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RateDevo" type="xs:double" />
+        <xs:element minOccurs="0" name="nMovement" type="xs:int" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessCalReceiptModResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProcessCalReceiptModResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessGroupBilling">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TypeMovement" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RecordType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LineOfBusiness" type="xs:int" />
+        <xs:element minOccurs="0" name="ProductCode" type="xs:int" />
+        <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+        <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+        <xs:element minOccurs="0" name="Currency" type="xs:int" />
+        <xs:element minOccurs="0" name="Year" type="xs:int" />
+        <xs:element minOccurs="0" name="Month" type="xs:int" />
+        <xs:element minOccurs="0" name="RiskSituation" type="xs:int" />
+        <xs:element minOccurs="0" name="Division" type="xs:int" />
+        <xs:element minOccurs="0" name="BillOrigin" type="xs:int" />
+        <xs:element minOccurs="0" name="ClientID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="recordEffectiveDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="auditUserIdentify" type="xs:int" />
+        <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndingDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dLedgerDat" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessGroupBillingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProcessGroupBillingResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessRenewalPol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="key" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LineOfBusiness" type="xs:int" />
+        <xs:element minOccurs="0" name="ProductCode" type="xs:int" />
+        <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+        <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+        <xs:element minOccurs="0" name="initialDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="finalDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="office" type="xs:int" />
+        <xs:element minOccurs="0" name="officeAgen" type="xs:int" />
+        <xs:element minOccurs="0" name="intermed" type="xs:long" />
+        <xs:element minOccurs="0" name="UserCode" type="xs:int" />
+        <xs:element minOccurs="0" name="TypeOfProcess" type="xs:int" />
+        <xs:element minOccurs="0" name="massive" type="xs:boolean" />
+        <xs:element minOccurs="0" name="agency" type="xs:int" />
+        <xs:element minOccurs="0" name="receipt_ind" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="logicalTransactionCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessRenewalPolResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="ProcessRenewalPolResult" nillable="true" type="q63:CoverageWithCalculatedPremiumCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Synchronize">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="riskInformationInstance" nillable="true" type="q64:RiskInformation" />
+        <xs:element minOccurs="0" name="generatePolicyId" type="xs:boolean" />
+        <xs:element minOccurs="0" name="auditUserIdentify" type="xs:int" />
+        <xs:element minOccurs="0" name="atDate" type="xs:dateTime" />
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts.Enumerations" minOccurs="0" name="transaction" type="q65:EnumTransaction" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SynchronizeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SynchronizeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SynchronizeAutomobileInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="AutomobileInformationInstance" nillable="true" type="q66:AutomobileInformation" />
+        <xs:element minOccurs="0" name="usercode" type="xs:int" />
+        <xs:element minOccurs="0" name="atDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SynchronizeAutomobileInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SynchronizeAutomobileInformationResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrievePoliciesByClientIdAndRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ClientRole" type="xs:int" />
+        <xs:element minOccurs="0" name="atDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="offset" type="xs:int" />
+        <xs:element minOccurs="0" name="limit" type="xs:int" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrievePoliciesByClientIdAndRoleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="RetrievePoliciesByClientIdAndRoleResult" nillable="true" type="q67:PoliciesSections" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveVehicleByBrand">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="brandCode" type="xs:int" />
+        <xs:element minOccurs="0" name="atDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="withLookupInformation" type="xs:boolean" />
+        <xs:element minOccurs="0" name="childFilter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveVehicleByBrandResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" minOccurs="0" name="RetrieveVehicleByBrandResult" nillable="true" type="q68:VehiclesInAutoCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

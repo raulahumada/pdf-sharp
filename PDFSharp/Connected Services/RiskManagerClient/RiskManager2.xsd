@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/InMotionGIT.General.Entity.Contracts.Phones.Enumerations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/InMotionGIT.General.Entity.Contracts.Phones.Enumerations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="EnumTelephoneType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Business" />
+      <xs:enumeration value="Mobile" />
+      <xs:enumeration value="Fax" />
+      <xs:enumeration value="Home" />
+      <xs:enumeration value="Other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumTelephoneType" nillable="true" type="tns:EnumTelephoneType" />
+</xs:schema>

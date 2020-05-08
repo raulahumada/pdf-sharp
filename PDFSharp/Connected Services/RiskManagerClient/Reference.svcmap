@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6ca3490d-39e1-4bd2-ba7b-79495dcba711" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://54.243.153.217:8082/BackOffice/RiskManager.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RiskManager.xsd" MetadataType="Schema" ID="e57f3ea0-ce8a-4712-b44b-4a94d1d054d2" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd19" />
+    <MetadataFile FileName="RiskManager1.xsd" MetadataType="Schema" ID="fec703a2-6942-4e72-89ac-8bae816373b5" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd0" />
+    <MetadataFile FileName="RiskManager2.xsd" MetadataType="Schema" ID="6f3ab952-2ac7-4732-8fd6-f8d065196b49" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd10" />
+    <MetadataFile FileName="RiskManager3.xsd" MetadataType="Schema" ID="d5841866-4f9e-48ce-92e4-15486d969f88" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd28" />
+    <MetadataFile FileName="RiskManager4.xsd" MetadataType="Schema" ID="ab030915-e969-40e3-9617-8e3154d89b82" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd3" />
+    <MetadataFile FileName="RiskManager5.xsd" MetadataType="Schema" ID="c8eebcd9-f6f2-4413-85e6-10f4fe86a740" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd8" />
+    <MetadataFile FileName="RiskManager6.xsd" MetadataType="Schema" ID="7a799e13-b46a-48c8-870f-894749b93e0e" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd6" />
+    <MetadataFile FileName="RiskManager7.xsd" MetadataType="Schema" ID="a6fb3b68-2d83-4885-93b0-ffbd364c1869" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd13" />
+    <MetadataFile FileName="RiskManager8.xsd" MetadataType="Schema" ID="d5550e69-82a9-4287-acd8-ac9f909e9867" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd12" />
+    <MetadataFile FileName="RiskManager9.xsd" MetadataType="Schema" ID="003eb2c1-c813-480a-93b8-67c21d3dbb74" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd11" />
+    <MetadataFile FileName="RiskManager.wsdl" MetadataType="Wsdl" ID="73f32900-87f2-48bf-9c50-65cff9b34dd5" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?wsdl" />
+    <MetadataFile FileName="RiskManager10.xsd" MetadataType="Schema" ID="ec02bf0c-5a62-4183-bf40-d912a5002619" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd29" />
+    <MetadataFile FileName="RiskManager11.xsd" MetadataType="Schema" ID="9a7d1990-cea0-4bcf-a5fa-8f34f2ba9953" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd1" />
+    <MetadataFile FileName="RiskManager12.xsd" MetadataType="Schema" ID="1f582eb8-ec75-46d0-a9da-c73d550772d5" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd16" />
+    <MetadataFile FileName="RiskManager13.xsd" MetadataType="Schema" ID="735839c4-a827-4fe9-8bda-8262ddc35a16" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd17" />
+    <MetadataFile FileName="RiskManager14.xsd" MetadataType="Schema" ID="8a254383-d9e1-4ff5-bc9c-5ba6a09553f6" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd20" />
+    <MetadataFile FileName="RiskManager15.xsd" MetadataType="Schema" ID="0959c256-6a32-43cb-be57-3169e51026eb" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd15" />
+    <MetadataFile FileName="RiskManager16.xsd" MetadataType="Schema" ID="da5fc7f0-d9de-46e2-9c3c-d3a49c45bb85" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd14" />
+    <MetadataFile FileName="RiskManager17.xsd" MetadataType="Schema" ID="e686d1df-0f3f-4e5b-97bf-b2b20ad95f20" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd4" />
+    <MetadataFile FileName="RiskManager18.xsd" MetadataType="Schema" ID="36f2d21d-786c-4da3-9ef5-f359f59a77ff" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd9" />
+    <MetadataFile FileName="RiskManager19.xsd" MetadataType="Schema" ID="4fb7ce1c-6fe3-4554-ae79-955567e0477e" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd7" />
+    <MetadataFile FileName="RiskManager20.xsd" MetadataType="Schema" ID="75d8c8e3-29eb-4da5-960c-c4be9d2f2855" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd23" />
+    <MetadataFile FileName="RiskManager21.xsd" MetadataType="Schema" ID="63b7bc4a-7899-4e7f-8817-ef9ce33cfc2f" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd27" />
+    <MetadataFile FileName="RiskManager22.xsd" MetadataType="Schema" ID="84ae57bb-70c4-46d2-b85b-bd0d67afddb0" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd22" />
+    <MetadataFile FileName="RiskManager23.xsd" MetadataType="Schema" ID="053abd98-7726-46be-b916-984988155ab6" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd21" />
+    <MetadataFile FileName="RiskManager24.xsd" MetadataType="Schema" ID="baf7f3c2-9d0f-4007-9504-46de813599f3" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd18" />
+    <MetadataFile FileName="RiskManager25.xsd" MetadataType="Schema" ID="369c6f3e-1fff-4ffc-87ea-dbc9daf463d0" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd2" />
+    <MetadataFile FileName="RiskManager26.xsd" MetadataType="Schema" ID="e63c25fc-32c4-4322-b866-2778cc3d60a0" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd26" />
+    <MetadataFile FileName="RiskManager27.xsd" MetadataType="Schema" ID="72c3c6d9-7b02-4fa1-82d4-4ad79c34aa23" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd25" />
+    <MetadataFile FileName="RiskManager28.xsd" MetadataType="Schema" ID="5c61740a-07f8-4c64-93a6-0d6447869ac7" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd24" />
+    <MetadataFile FileName="RiskManager29.xsd" MetadataType="Schema" ID="be00acaf-97cb-4c24-91d3-7beddd9e95b5" SourceId="1" SourceUrl="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd5" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

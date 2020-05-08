@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RiskManager" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd2" namespace="urn:InMotionGIT.Common.DataType" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Common.Contracts.Enumerations" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd5" namespace="urn:InMotionGIT.Common.Contracts" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Common.Enumerations" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Product.Entity.Contracts.Enumerations" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.General.Entity.Contracts.Address" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.General.Entity.Contracts.Phones" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.General.Entity.Contracts.Phones.Enumerations" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.General.Entity.Contracts.Address.Enumerations" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts.Enumerations" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.General.Entity.Contracts.Notes" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Client.Entity.Contracts" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Common.Contracts.Errors.Enumerations" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd16" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.General.Entity.Contracts.Images" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Client.Entity.Contracts.Enumerations" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.CommercialStructure.Entity.Contracts" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd19" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Intermedia.Entity.Contracts" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd20" namespace="InMotionGIT.General.Entity.Contracts" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd21" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Bill.Entity.Contracts" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd22" namespace="Rating" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd23" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.PolicyManager.Services.Enumerations" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd24" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Product.Entity.Contracts" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd25" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Policy.Entity.Contracts.Base" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd26" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Claim.Entity.Contracts" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd27" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.CoReinsurance.Entity.Contracts.Enumerations" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd28" namespace="urn:InMotionGIT.Policy.Entity.Contracts.Models.Result" />
+      <xsd:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd29" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IRiskManager_VehicleBrandsLkp_InputMessage">
+    <wsdl:part name="parameters" element="tns:VehicleBrandsLkp" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_VehicleBrandsLkp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VehicleBrandsLkpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_VehicleModelsLkp_InputMessage">
+    <wsdl:part name="parameters" element="tns:VehicleModelsLkp" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_VehicleModelsLkp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VehicleModelsLkpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_RetrieveVehicleInformationByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveVehicleInformationByCode" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_RetrieveVehicleInformationByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveVehicleInformationByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_RetrieveVehicleInformationByBrandAndModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveVehicleInformationByBrandAndModel" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_RetrieveVehicleInformationByBrandAndModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveVehicleInformationByBrandAndModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_Find_InputMessage">
+    <wsdl:part name="parameters" element="tns:Find" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_Find_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_Retrieve_InputMessage">
+    <wsdl:part name="parameters" element="tns:Retrieve" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_Retrieve_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_RetrieveByBill_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveByBill" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_RetrieveByBill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveByBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_GeneratePolicyIdentify_InputMessage">
+    <wsdl:part name="parameters" element="tns:GeneratePolicyIdentify" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_GeneratePolicyIdentify_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GeneratePolicyIdentifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_RetrieveAutomobileInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveAutomobileInformation" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_RetrieveAutomobileInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveAutomobileInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_LicensePlateCheckDigitCalculate_InputMessage">
+    <wsdl:part name="parameters" element="tns:LicensePlateCheckDigitCalculate" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_LicensePlateCheckDigitCalculate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LicensePlateCheckDigitCalculateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_CoverageRating_InputMessage">
+    <wsdl:part name="parameters" element="tns:CoverageRating" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_CoverageRating_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CoverageRatingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_Billing_InputMessage">
+    <wsdl:part name="parameters" element="tns:Billing" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_Billing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BillingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_PolicyLoad_InputMessage">
+    <wsdl:part name="parameters" element="tns:PolicyLoad" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_PolicyLoad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PolicyLoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_ClientInformationRequired_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClientInformationRequired" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_ClientInformationRequired_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClientInformationRequiredResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_CoverageRatingLife_InputMessage">
+    <wsdl:part name="parameters" element="tns:CoverageRatingLife" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_CoverageRatingLife_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CoverageRatingLifeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_RetrieveForAmendment_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveForAmendment" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_RetrieveForAmendment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveForAmendmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_AmendmentSetup_InputMessage">
+    <wsdl:part name="parameters" element="tns:AmendmentSetup" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_AmendmentSetup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AmendmentSetupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_AmendmentApply_InputMessage">
+    <wsdl:part name="parameters" element="tns:AmendmentApply" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_AmendmentApply_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AmendmentApplyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_CalculateCapital_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateCapital" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_CalculateCapital_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateCapitalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_CalculatePremium_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePremium" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_CalculatePremium_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePremiumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_GetPolicyBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPolicyBalance" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_GetPolicyBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPolicyBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_BillCalculation_InputMessage">
+    <wsdl:part name="parameters" element="tns:BillCalculation" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_BillCalculation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BillCalculationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_PolicyLoader_InputMessage">
+    <wsdl:part name="parameters" element="tns:PolicyLoader" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_PolicyLoader_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PolicyLoaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_PolicySetup_InputMessage">
+    <wsdl:part name="parameters" element="tns:PolicySetup" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_PolicySetup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PolicySetupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_RatingSpecialCalculateProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:RatingSpecialCalculateProcess" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_RatingSpecialCalculateProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RatingSpecialCalculateProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_RatingCalculateProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:RatingCalculateProcess" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_RatingCalculateProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RatingCalculateProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_ProcessCalReceiptMod_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessCalReceiptMod" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_ProcessCalReceiptMod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessCalReceiptModResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_ProcessGroupBilling_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessGroupBilling" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_ProcessGroupBilling_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessGroupBillingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_ProcessRenewalPol_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessRenewalPol" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_ProcessRenewalPol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessRenewalPolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_Synchronize_InputMessage">
+    <wsdl:part name="parameters" element="tns:Synchronize" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_Synchronize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SynchronizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_SynchronizeAutomobileInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:SynchronizeAutomobileInformation" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_SynchronizeAutomobileInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SynchronizeAutomobileInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_RetrievePoliciesByClientIdAndRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrievePoliciesByClientIdAndRole" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_RetrievePoliciesByClientIdAndRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrievePoliciesByClientIdAndRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_RetrieveVehicleByBrand_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveVehicleByBrand" />
+  </wsdl:message>
+  <wsdl:message name="IRiskManager_RetrieveVehicleByBrand_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveVehicleByBrandResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IRiskManager">
+    <wsdl:operation name="VehicleBrandsLkp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/VehicleBrandsLkp" message="tns:IRiskManager_VehicleBrandsLkp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/VehicleBrandsLkpResponse" message="tns:IRiskManager_VehicleBrandsLkp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VehicleModelsLkp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/VehicleModelsLkp" message="tns:IRiskManager_VehicleModelsLkp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/VehicleModelsLkpResponse" message="tns:IRiskManager_VehicleModelsLkp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveVehicleInformationByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/RetrieveVehicleInformationByCode" message="tns:IRiskManager_RetrieveVehicleInformationByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/RetrieveVehicleInformationByCodeResponse" message="tns:IRiskManager_RetrieveVehicleInformationByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveVehicleInformationByBrandAndModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/RetrieveVehicleInformationByBrandAndModel" message="tns:IRiskManager_RetrieveVehicleInformationByBrandAndModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/RetrieveVehicleInformationByBrandAndModelResponse" message="tns:IRiskManager_RetrieveVehicleInformationByBrandAndModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Find">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/Find" message="tns:IRiskManager_Find_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/FindResponse" message="tns:IRiskManager_Find_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Retrieve">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/Retrieve" message="tns:IRiskManager_Retrieve_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/RetrieveResponse" message="tns:IRiskManager_Retrieve_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveByBill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/RetrieveByBill" message="tns:IRiskManager_RetrieveByBill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/RetrieveByBillResponse" message="tns:IRiskManager_RetrieveByBill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GeneratePolicyIdentify">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/GeneratePolicyIdentify" message="tns:IRiskManager_GeneratePolicyIdentify_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/GeneratePolicyIdentifyResponse" message="tns:IRiskManager_GeneratePolicyIdentify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAutomobileInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/RetrieveAutomobileInformation" message="tns:IRiskManager_RetrieveAutomobileInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/RetrieveAutomobileInformationResponse" message="tns:IRiskManager_RetrieveAutomobileInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LicensePlateCheckDigitCalculate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/LicensePlateCheckDigitCalculate" message="tns:IRiskManager_LicensePlateCheckDigitCalculate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/LicensePlateCheckDigitCalculateResponse" message="tns:IRiskManager_LicensePlateCheckDigitCalculate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CoverageRating">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/CoverageRating" message="tns:IRiskManager_CoverageRating_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/CoverageRatingResponse" message="tns:IRiskManager_CoverageRating_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Billing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/Billing" message="tns:IRiskManager_Billing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/BillingResponse" message="tns:IRiskManager_Billing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PolicyLoad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/PolicyLoad" message="tns:IRiskManager_PolicyLoad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/PolicyLoadResponse" message="tns:IRiskManager_PolicyLoad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClientInformationRequired">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/ClientInformationRequired" message="tns:IRiskManager_ClientInformationRequired_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/ClientInformationRequiredResponse" message="tns:IRiskManager_ClientInformationRequired_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CoverageRatingLife">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/CoverageRatingLife" message="tns:IRiskManager_CoverageRatingLife_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/CoverageRatingLifeResponse" message="tns:IRiskManager_CoverageRatingLife_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveForAmendment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/RetrieveForAmendment" message="tns:IRiskManager_RetrieveForAmendment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/RetrieveForAmendmentResponse" message="tns:IRiskManager_RetrieveForAmendment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AmendmentSetup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/AmendmentSetup" message="tns:IRiskManager_AmendmentSetup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/AmendmentSetupResponse" message="tns:IRiskManager_AmendmentSetup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AmendmentApply">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/AmendmentApply" message="tns:IRiskManager_AmendmentApply_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/AmendmentApplyResponse" message="tns:IRiskManager_AmendmentApply_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateCapital">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/CalculateCapital" message="tns:IRiskManager_CalculateCapital_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/CalculateCapitalResponse" message="tns:IRiskManager_CalculateCapital_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePremium">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/CalculatePremium" message="tns:IRiskManager_CalculatePremium_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/CalculatePremiumResponse" message="tns:IRiskManager_CalculatePremium_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPolicyBalance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/GetPolicyBalance" message="tns:IRiskManager_GetPolicyBalance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/GetPolicyBalanceResponse" message="tns:IRiskManager_GetPolicyBalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BillCalculation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/BillCalculation" message="tns:IRiskManager_BillCalculation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/BillCalculationResponse" message="tns:IRiskManager_BillCalculation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PolicyLoader">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/PolicyLoader" message="tns:IRiskManager_PolicyLoader_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/PolicyLoaderResponse" message="tns:IRiskManager_PolicyLoader_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PolicySetup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/PolicySetup" message="tns:IRiskManager_PolicySetup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/PolicySetupResponse" message="tns:IRiskManager_PolicySetup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RatingSpecialCalculateProcess">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/RatingSpecialCalculateProcess" message="tns:IRiskManager_RatingSpecialCalculateProcess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/RatingSpecialCalculateProcessResponse" message="tns:IRiskManager_RatingSpecialCalculateProcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RatingCalculateProcess">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/RatingCalculateProcess" message="tns:IRiskManager_RatingCalculateProcess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/RatingCalculateProcessResponse" message="tns:IRiskManager_RatingCalculateProcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessCalReceiptMod">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/ProcessCalReceiptMod" message="tns:IRiskManager_ProcessCalReceiptMod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/ProcessCalReceiptModResponse" message="tns:IRiskManager_ProcessCalReceiptMod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessGroupBilling">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/ProcessGroupBilling" message="tns:IRiskManager_ProcessGroupBilling_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/ProcessGroupBillingResponse" message="tns:IRiskManager_ProcessGroupBilling_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessRenewalPol">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/ProcessRenewalPol" message="tns:IRiskManager_ProcessRenewalPol_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/ProcessRenewalPolResponse" message="tns:IRiskManager_ProcessRenewalPol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Synchronize">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/Synchronize" message="tns:IRiskManager_Synchronize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/SynchronizeResponse" message="tns:IRiskManager_Synchronize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SynchronizeAutomobileInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/SynchronizeAutomobileInformation" message="tns:IRiskManager_SynchronizeAutomobileInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/SynchronizeAutomobileInformationResponse" message="tns:IRiskManager_SynchronizeAutomobileInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrievePoliciesByClientIdAndRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/RetrievePoliciesByClientIdAndRole" message="tns:IRiskManager_RetrievePoliciesByClientIdAndRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/RetrievePoliciesByClientIdAndRoleResponse" message="tns:IRiskManager_RetrievePoliciesByClientIdAndRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveVehicleByBrand">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRiskManager/RetrieveVehicleByBrand" message="tns:IRiskManager_RetrieveVehicleByBrand_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRiskManager/RetrieveVehicleByBrandResponse" message="tns:IRiskManager_RetrieveVehicleByBrand_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IRiskManager" type="tns:IRiskManager">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VehicleBrandsLkp">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/VehicleBrandsLkp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VehicleModelsLkp">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/VehicleModelsLkp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveVehicleInformationByCode">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/RetrieveVehicleInformationByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveVehicleInformationByBrandAndModel">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/RetrieveVehicleInformationByBrandAndModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Find">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/Find" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Retrieve">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/Retrieve" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveByBill">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/RetrieveByBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneratePolicyIdentify">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/GeneratePolicyIdentify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAutomobileInformation">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/RetrieveAutomobileInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LicensePlateCheckDigitCalculate">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/LicensePlateCheckDigitCalculate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CoverageRating">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/CoverageRating" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Billing">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/Billing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyLoad">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/PolicyLoad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClientInformationRequired">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/ClientInformationRequired" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CoverageRatingLife">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/CoverageRatingLife" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveForAmendment">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/RetrieveForAmendment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AmendmentSetup">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/AmendmentSetup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AmendmentApply">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/AmendmentApply" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateCapital">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/CalculateCapital" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePremium">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/CalculatePremium" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPolicyBalance">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/GetPolicyBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BillCalculation">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/BillCalculation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyLoader">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/PolicyLoader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PolicySetup">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/PolicySetup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RatingSpecialCalculateProcess">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/RatingSpecialCalculateProcess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RatingCalculateProcess">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/RatingCalculateProcess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessCalReceiptMod">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/ProcessCalReceiptMod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessGroupBilling">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/ProcessGroupBilling" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessRenewalPol">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/ProcessRenewalPol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Synchronize">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/Synchronize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SynchronizeAutomobileInformation">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/SynchronizeAutomobileInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrievePoliciesByClientIdAndRole">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/RetrievePoliciesByClientIdAndRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveVehicleByBrand">
+      <soap:operation soapAction="http://tempuri.org/IRiskManager/RetrieveVehicleByBrand" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RiskManager">
+    <wsdl:port name="BasicHttpBinding_IRiskManager" binding="tns:BasicHttpBinding_IRiskManager">
+      <soap:address location="http://54.243.153.217:8082/BackOffice/RiskManager.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

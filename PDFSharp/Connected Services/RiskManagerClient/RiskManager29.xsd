@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="urn:InMotionGIT.Common.Contracts" elementFormDefault="qualified" targetNamespace="urn:InMotionGIT.Common.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Common.Enumerations" />
+  <xs:import schemaLocation="http://54.243.153.217:8082/BackOffice/RiskManager.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/InMotionGIT.Common.Contracts.Errors.Enumerations" />
+  <xs:complexType name="ConsumerInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Security" nillable="true" type="tns:SecurityInformation" />
+      <xs:element minOccurs="0" name="Site" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserInitials" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserPassword" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/InMotionGIT.Common.Enumerations" minOccurs="0" name="Version" type="q1:EnumApplicationVersion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsumerInformation" nillable="true" type="tns:ConsumerInformation" />
+  <xs:complexType name="SecurityInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BranchOffice" type="xs:int" />
+      <xs:element minOccurs="0" name="CompanyType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Schema" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityLevel" type="xs:int" />
+      <xs:element minOccurs="0" name="Usercode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SecurityInformation" nillable="true" type="tns:SecurityInformation" />
+  <xs:complexType name="ErrorCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Error" nillable="true" type="tns:Error" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ErrorCollection" nillable="true" type="tns:ErrorCollection" />
+  <xs:complexType name="Error">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ControlId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ControlIdFullPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorId" type="xs:int" />
+      <xs:element minOccurs="0" name="Line" type="xs:int" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/InMotionGIT.Common.Contracts.Errors.Enumerations" minOccurs="0" name="Severity" type="q2:EnumSeverity" />
+      <xs:element minOccurs="0" name="SeverityImage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tracking" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Error" nillable="true" type="tns:Error" />
+  <xs:complexType name="ArrayOfError">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Error" nillable="true" type="tns:Error" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfError" nillable="true" type="tns:ArrayOfError" />
+</xs:schema>
